@@ -10,7 +10,7 @@ MEGACORE_PATH="./MegaCore"
 NANIT_LIBRARY_PATH="${NANIT_PATH}/libraries"
 MEGACORE_LIBRARY_PATH="${MEGACORE_PATH}/avr/libraries"
 
-NANIT_CORE_PATH="${NANIT_PATH}/cores/MegaCore"
+NANIT_CORE_PATH="${NANIT_PATH}/cores/"
 MEGACORE_CORE_PATH="${MEGACORE_PATH}/avr/cores/MCUdude_corefiles"
 
 PINS_PATH="./Nanit/variants/Nanit"
@@ -25,7 +25,9 @@ cp -ruf ${MEGACORE_LIBRARY_PATH}/EEPROM/ ${NANIT_LIBRARY_PATH}/EEPROM/
 mkdir -p ${NANIT_CORE_PATH}
 cp -ruf ${MEGACORE_CORE_PATH}/ ${NANIT_CORE_PATH}/
 
-# tar -xvf Nanit.tar
+# КОСТИЛЬ
+mv ${NANIT_CORE_PATH}/MCUdude_corefiles "${NANIT_CORE_PATH}/MegaCore"
+
 unzip -o NanitIDE.zip -d ${NANIT_PATH}
 
 zip -qq -r NanitCore.zip ${NANIT_PATH}
