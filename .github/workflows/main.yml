@@ -55,7 +55,7 @@ jobs:
       #   run: zip -qq -r NanitCore.zip ./Nanit
     # 7) Build site
       - name: Make package_index.json
-        run: sh ./MakePackageJson.sh  {{GITHUB_REPOSITORY}} $(sha256sum NanitCore.zip)
+        run: sh ./MakePackageJson.sh ${{ GITHUB_REPOSITORY }} $(sha256sum NanitCore.zip)
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
