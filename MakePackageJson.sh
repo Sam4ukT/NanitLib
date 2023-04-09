@@ -14,7 +14,7 @@ FILE_SIZE=$(stat -c %s ${FILE_NAME})
 OWNER=$(echo "${GITHUB_OWNER_REPO}" | cut -d '/' -f 1)
 REPO=$(echo "${GITHUB_OWNER_REPO}" | cut -d '/' -f 2)
 
-HOST="${OWNER}.github.io"
+HOST="https://${OWNER}.github.io"
 FILE_PATH="${REPO}/"
 
 DOWNLOAD_URL="${HOST}/${REPO}/${FILE_NAME}"
@@ -42,12 +42,12 @@ cat <<EOF > "${OUT_FILE}"
         {
           "name": "Nanit",
           "architecture": "avr",
-          "version": "0.1",
+          "version": "0.1.1",
           "category": "Contributed",
           "help": {
             "online": ""
           },
-          "url": "https://${HOST}/${FILE_PATH}${FILE_NAME}",
+          "url": "${HOST}/${FILE_PATH}${FILE_NAME}",
           "archiveFileName": "${FILE_NAME}",
           "checksum" : "SHA-256:${SHA256}",
           "size" : "${FILE_SIZE}",
@@ -72,7 +72,19 @@ cat <<EOF > "${OUT_FILE}"
       ]
     }
   ],
-  "tools": [
+  "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "avr-gcc",
+              "version": "7.3.0-atmel3.6.1-arduino7"
+            },
+            {
+              "packager": "arduino",
+              "name": "avrdude",
+              "version": "6.3.0-arduino17"
+            }
+          ],
+          "tools": [
         {
           "name": "avr-gcc",
           "version": "7.3.0-atmel3.6.1-arduino7",
