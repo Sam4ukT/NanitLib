@@ -42,12 +42,12 @@ cat <<EOF > "${OUT_FILE}"
         {
           "name": "Nanit",
           "architecture": "avr",
-          "version": "0.0.3",
+          "version": "0.1",
           "category": "Contributed",
           "help": {
             "online": ""
           },
-          "url": "${HOST}/${FILE_PATH}${FILE_NAME}",
+          "url": "https://${HOST}/${FILE_PATH}${FILE_NAME}",
           "archiveFileName": "${FILE_NAME}",
           "checksum" : "SHA-256:${SHA256}",
           "size" : "${FILE_SIZE}",
