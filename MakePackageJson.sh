@@ -47,7 +47,7 @@ cat <<EOF > "${OUT_FILE}"
           "help": {
             "online": ""
           },
-          "url": "${HOST}/${FILE_PATH}${FILE_NAME}",
+          "url": "https://${HOST}/${FILE_PATH}${FILE_NAME}",
           "archiveFileName": "${FILE_NAME}",
           "checksum" : "SHA-256:${SHA256}",
           "size" : "${FILE_SIZE}",
